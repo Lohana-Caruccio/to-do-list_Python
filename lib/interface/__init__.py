@@ -25,10 +25,10 @@ def leiaStr(msg):
             break
     return t
 
-def linha(tam=45):
+def linha(tam=85):
     return '-' * tam
 
 def cabecalho(txt):
     print(linha())
-    print(txt.center(45))
+    print(txt.center(85))
     print(linha())
