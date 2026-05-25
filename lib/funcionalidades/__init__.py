@@ -14,8 +14,8 @@ def adicionar_tarefa():
     novo_id = gerar_id(dados)
     data_atual = datetime.now().strftime('%d/%m/%Y %H:%M')
 
-    titulo = leiaStr('Nome da tarefa: ').upper()
-    importancia = leiaInt('Importância de (1 a 5): ')
+    titulo = leiaStr('📌Nome da tarefa: ').upper()
+    importancia = leiaInt('📈Importância de (1 a 5): ')
 
     nova_tarefa = {
         'id': novo_id,
@@ -26,20 +26,21 @@ def adicionar_tarefa():
     }
     dados.append(nova_tarefa)
     salvar_D(dados)
-    print(f'<< Tarefa {titulo} adicionada com sucesso! >>')
+    print(colorir(f'<< Tarefa {titulo} adicionada com sucesso!✅ >>', 5))
 
 def LISTAR():
     print('=' * 85)
-    print('QUAIS TAREFAS VOCÊ DESEJA FILTRAR?')
+    print(colorir('QUAIS TAREFAS VOCÊ DESEJA FILTRAR?', 7))
     print('\n[1] PENDENTES\n'
           '[2] CONCLUÍDAS\n'
-          '[3] TODAS')
+          '[3] TODAS\n'
+          '[0] VOLTAR')
     linha()
 
 
 def listar_tarefas(dados):
     if not dados:
-       print( f'Sua lista de tarefas está vazia!'.center(85))
+       print( f'Sua lista de tarefas está vazia! ⭕'.center(85))
        return
 
     print('\n' + '=' * 85)
@@ -76,15 +77,15 @@ def remover_tarefas(dados):
     remover_id = leiaInt('\nID que deseja remover: ')
     dados_atualizados = [t for t in dados if t['id'] != remover_id]
     if len(dados_atualizados) == len(dados):
-        print('ID não encontrado!')
+        print(colorir('ID não encontrado!', 1))
         return
     salvar_D(dados_atualizados)
     dados[:] = dados_atualizados
-    print('<< Tarefa removida com sucesso! >>')
+    print(colorir('<< Tarefa removida com sucesso!❌ >>', 5))
 
 
 def concluir_tarefa(dados):
-    concluir_id = leiaInt('\nID que deseja concluir: ')
+    concluir_id = leiaInt('\n📌ID que deseja concluir: ')
     encontrado = False
 
     for t in dados:
@@ -96,11 +97,11 @@ def concluir_tarefa(dados):
         print('ID não encontrado!')
 
     salvar_D(dados)
-    print('<< Status da tarefa alterado para: Concluída >>')
+    print(colorir('<< Status da tarefa alterado para: Concluída >>', 5))
 
 
 def volta_pendencia(dados):
-    pendente_id = leiaInt('\nID que deseja alterar para pendente: ')
+    pendente_id = leiaInt('\n📌ID que deseja alterar para pendente: ')
     encontrado = False
 
     for t in dados:
@@ -112,22 +113,26 @@ def volta_pendencia(dados):
         print('ID não encontrado!')
 
     salvar_D(dados)
-    print('<< Status da tarefa alterado para: Pendente >>')
+    print(colorir('<< Status da tarefa alterado para: Pendente >>', 5))
 
 
 def editar_D(dados):
-    print('-' * 85)
-    print('ESCOLHA:')
-    print('\n[1] REMOVER TAREFAS\n'
-            '[2] MUDAR STATUS PARA CONCLUÍDA\n'
-            '[3] MUDAR STATUS PARA PENDENTE\n')
-    resp = leiaInt('Escolha uma opção: ')
+    while True:
+        print('-' * 85)
+        print(colorir('ESCOLHA:', 7))
+        print('\n[1] REMOVER TAREFAS\n'
+                '[2] MUDAR STATUS PARA CONCLUÍDA\n'
+                '[3] MUDAR STATUS PARA PENDENTE\n'
+                '[0] VOLTAR\n')
+        resp = leiaInt('Escolha uma opção: ')
 
-    if resp == 1:
-        remover_tarefas(dados)
-    elif resp == 2:
-        concluir_tarefa(dados)
-    elif resp == 3:
-        volta_pendencia(dados)
-    else:
-        print('\033[31mERRO: Digite uma opção válida!\033[m')
+        if resp == 1:
+            remover_tarefas(dados)
+        elif resp == 2:
+            concluir_tarefa(dados)
+        elif resp == 3:
+            volta_pendencia(dados)
+        elif resp == 0:
+            break
+        else:
+            print(colorir('ERRO: Digite uma opção válida!\033[m'), 1)
