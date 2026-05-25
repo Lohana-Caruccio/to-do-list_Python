@@ -26,7 +26,7 @@ while True:
             elif resp == 2:
                 filtrar_concluidas(minhas_tarefas)
             elif resp == 3:
-                cabecalho('TAREFAS')
+                cabecalho('  TAREFAS  ')
                 listar_tarefas(minhas_tarefas)
             elif resp == 0:
                 break

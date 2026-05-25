@@ -30,8 +30,13 @@ def linha(tam=85):
 
 def cabecalho(txt):
     print(linha())
-    print(colorir(txt.center(85), 8))
+    emojis = ['🩷']
+    extra = sum(txt.count(e) for e in emojis)
+    tamanho_ajustado = 85 - extra
+    texto_centralizado = txt.center(tamanho_ajustado)
+    print(colorir(texto_centralizado, i=8))
     print(linha())
+
 
 #Tupla para guardar as cores
 c = ('\033[0m',    #0 -sem cores
@@ -42,7 +47,7 @@ c = ('\033[0m',    #0 -sem cores
     '\033[0;35m', #5 - roxo
     '\033[0;36m',  #6 - azul piscina
     '\033[4;35m', # 7 - roxo sublinhado
-    '\033[0;35;107m' #8 - vermelho com fundo branco
+    '\033[0;35;107m' #8 - roxo com fundo branco
      )
 
 def colorir(txt=0, i=0):
