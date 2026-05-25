@@ -6,7 +6,7 @@ minhas_tarefas = carregar_dados()
 
 while True:
     cabecalho('🩷 SISTEMA DE TAREFAS 🩷')
-    print(colorir('💌 MENU 💌\n', 7).center(96))
+    print(colorir('💌 MENU 💌\n', 7).center(94))
     print('1 - ADICIONAR\n'
          '2 - LISTAR\n'
          '3 - EDITAR\n'
