@@ -34,9 +34,9 @@
 
 ## 📌 Demonstração básica do sistema
 
-![Menu do Sistema](print-sistema1.jpeg)
+![Menu do Sistema](imagens/print-sistema1.jpeg)
 
-![Demosntração de uma das funções do Sistema](print-sistema2.jpeg)
+![Demosntração de uma das funções do Sistema](imagens/print-sistema2.jpeg)
 
     
 ## 🩷 Autora
