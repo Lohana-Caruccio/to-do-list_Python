@@ -31,6 +31,13 @@
 ```bash
   python main.py
 ```
-     
+
+## 📌 Demonstração básica do sistema
+
+![Menu do Sistema](print-sistema1.jpeg)
+
+![Demosntração de uma das funções do Sistema](print-sistema2.jpeg)
+
+    
 ## 🩷 Autora
 Lohana Caruccio
