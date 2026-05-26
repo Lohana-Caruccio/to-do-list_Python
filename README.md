@@ -34,10 +34,11 @@
 
 ## 📌 Demonstração básica do sistema
 
-![Menu do Sistema](imagens/print-sistema1.jpeg)
+### Menu do Sistema
+![Menu do Sistema](imagens/print-sistema2.jpeg)
 
-![Demosntração de uma das funções do Sistema](imagens/print-sistema2.jpeg)
-
+### Demonstração de uma das funções do Sistema
+![Demosntração de uma das funções do Sistema](imagens/print-sistema1.jpeg)
     
 ## 🩷 Autora
 Lohana Caruccio
